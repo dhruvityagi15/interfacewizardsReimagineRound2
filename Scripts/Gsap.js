@@ -8,11 +8,12 @@ function debounce(func, delay) {
 }
 
 window.addEventListener('load', function() {
-    Loading();
+    // Loading();
+    init();
 });
+gsap.registerPlugin(ScrollTrigger);
 
 function Loading() {
-    gsap.registerPlugin();
     var tl = gsap.timeline();
     
     tl.from('.ball', {
@@ -82,5 +83,19 @@ function menu_func(){
             }
         }
     }, 300)); // Adjust debounce delay as needed (e.g., 300ms)
+}
+
+function home(){
+    gsap.to('.main_image', {
+        scrollTrigger: {
+            trigger: '.main_image',
+            scroller:'.home',
+            start: 'center 90%',
+            end: 'center 10%',
+            scrub: 1,
+            markers: true,
+        },
+        opacity: 0,
+    });
 }
 
