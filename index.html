@@ -8,14 +8,32 @@
 </head>
 <body>
     <!-- loading animation -->
-    <div class="Loading bg-black w-full h-screen flex justify-center items-center flex-col ">
+    <div class="Loading hidden bg-red-600 w-full h-screen flex justify-center items-center flex-col ">
         <div class="ball bg-white h-4 w-4 rounded-full"></div>
         <div class="loading_text w-fit text-[0px] h-0 overflow-hidden p-0 ">
             <span class=" text-white leading-none font-extrabold inline-block text-[200px] font-[Aspekta 800 Regular]">LittleBox</span>
         </div>
     </div>
     <div class="main">
-        <!-- whole website will be here -->
+        <div class="home  bg-red-600 w-full h-screen flex justify-center items-center flex-col">
+            <div class="absolute top-0 right-0 nav h-32 w-40 flex justify-center items-center">
+                <label class="flex flex-col gap-2 w-8">
+                    <input class="peer hidden" type="checkbox" />
+                    <div
+                      class="rounded-2xl h-[3px] w-1/2 bg-white duration-500 peer-checked:rotate-[225deg] origin-right peer-checked:-translate-x-[12px] peer-checked:-translate-y-[1px]"
+                    ></div>
+                    <div
+                      class="rounded-2xl h-[3px] w-full bg-white duration-500 peer-checked:-rotate-45"
+                    ></div>
+                    <div
+                      class="rounded-2xl h-[3px] w-1/2 bg-white duration-500 place-self-end peer-checked:rotate-[225deg] origin-left peer-checked:translate-x-[12px] peer-checked:translate-y-[1px]"
+                    ></div>
+                  </label>
+                  
+            </div>
+            <span class=" text-black leading-none font-extrabold inline-block text-[200px] font-mainFont">LittleBox</span>
+        </div>
+        </div>
     </div>
 
     <script src="./Scripts/script.js"></script>
