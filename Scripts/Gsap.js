@@ -8,8 +8,8 @@ function debounce(func, delay) {
 }
 
 window.addEventListener('load', function() {
-    Loading();
-    // init();
+    // Loading();
+    init();
 });
 gsap.registerPlugin(ScrollTrigger);
 
@@ -60,24 +60,29 @@ function init(){
     menu_func();
     home_animation();
     string_func();
+    scrollanimation();
 }
 
-function menu_func(){
+function menu_func() {
     var menu = document.querySelector('#menu');
     var tl = gsap.timeline({ paused: true }); // Initialize timeline paused
     
+    // Animate the nav element from outside the window to its final position
     tl.to('.full', {
-        right: 0,
-        duration: 0.6,
-        ease: 'power4.in',
+        right: '0%', // Final position
+        borderRadius: '0%', // Final border-radius
+        duration: 1.2, // Duration of the animation
+        ease: 'power4.in', // Easing function for smooth animation
     });
+
+    // Animate each h4 element within the nav
     tl.from('.full h4', {
         x: 100,
         stagger: 0.24,
         duration: 0.6,
         opacity: 0,
-    });
-    
+    }, '-=0.3'); // Overlap animations for a smoother effect
+
     menu.addEventListener('click', debounce(function() {
         if (!tl.isActive()) { // Check if timeline is not actively animating
             if (tl.progress() === 1) {
@@ -91,14 +96,33 @@ function menu_func(){
     }, 300)); // Adjust debounce delay as needed (e.g., 300ms)
 }
 
-// menutext animation
+function manutext_animation(){
+    // menutext animation
+    document.querySelectorAll('.menu_item').forEach(function(menuItem) {
+        menuItem.addEventListener('mouseover', function() {
+            gsap.to(menuItem, {
+                borderBottomWidth: "2px", // Adjust the width as needed
+                duration: 0.3,
+                ease: "power3.out"
+            });
+        });
+    
+        menuItem.addEventListener('mouseout', function() {
+            gsap.to(menuItem, {
+                borderBottomWidth: "0px",
+                duration: 0.3,
+                ease: "power3.out"
+            });
+        });
+    });
+
+}
+
 
 function home_animation(){
     const myText = new SplitType('#home_text',{types:'words'})
     
     gsap.from('.word',{
-        // y: 10,
-        // stagger: 0.2,
         duration: 1,
         opacity: 0,
     })
@@ -137,6 +161,22 @@ function string_func(){
         });
     });
 
+}
+function scrollanimation(){
+    gsap.registerPlugin(ScrollTrigger);
+    
+    gsap.to('.Whyus h1', {
+        transform: 'translateX(-150%)',
+        scrollTrigger: {
+            trigger: '.Whyus ',
+            scroller: 'body',
+            markers: true,
+            start: 'top 0%',
+            end:"top -150%",
+            scrub: 2,
+            pin: true,
+        }
+    });
 }
 
 
