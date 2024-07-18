@@ -61,6 +61,9 @@ function init(){
     home_animation();
     string_func();
     scrollanimation();
+    menutext_animation();
+    teamworks();
+    images_zoomer();
 }
 
 function menu_func() {
@@ -96,7 +99,7 @@ function menu_func() {
     }, 300)); // Adjust debounce delay as needed (e.g., 300ms)
 }
 
-function manutext_animation(){
+function menutext_animation(){
     // menutext animation
     document.querySelectorAll('.menu_item').forEach(function(menuItem) {
         menuItem.addEventListener('mouseover', function() {
@@ -179,4 +182,48 @@ function scrollanimation(){
     });
 }
 
+function teamworks() {
+    document.querySelectorAll(".listlem").forEach(function (el) {
+      el.addEventListener("mousemove", function (dets) {
+        gsap.to(this.querySelector(".picture"), {
+          opacity: 1,
+          x: gsap.utils.mapRange(0, window.innerWidth, -100, 100, dets.clientX),
+          ease: Power4,
+          duration: 0.25,
+        });
+      });
+  
+      el.addEventListener("mouseleave", function (dets) {
+        gsap.to(this.querySelector(".picture"), {
+          opacity: 0,
+          ease: Power4,
+          duration: 0.25,
+        });
+      });
+    });
+  }
+
+  function images_zoomer() {
+    // Select all images with the class 'images'
+    var images = document.querySelectorAll('.images');
+
+    // Iterate over each image and add event listeners for mouseenter and mouseleave
+    images.forEach(function(image) {
+        image.addEventListener('mouseenter', function() {
+            gsap.to(image, {
+                scale: 1.2,
+                duration: 0.5,
+                ease: "power4.out"
+            });
+        });
+
+        image.addEventListener('mouseleave', function() {
+            gsap.to(image, {
+                scale: 1,
+                duration: 0.5,
+                ease: "power4.out"
+            });
+        });
+    });
+}
 
