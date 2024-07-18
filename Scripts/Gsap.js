@@ -8,8 +8,8 @@ function debounce(func, delay) {
 }
 
 window.addEventListener('load', function() {
-    // Loading();
-    init();
+    Loading();
+    // init();
 });
 gsap.registerPlugin(ScrollTrigger);
 
@@ -42,11 +42,15 @@ function Loading() {
         height: 200,
         duration: 0.5,
         delay: 0.5,
+    }, 'a')
+    .to('.Loading', {
+        opacity: 0,
+        duration: 0.5,
         onComplete: function() {
             tl.kill();
             init();
         }
-    }, 'a');
+    })
 }
 
 function init(){
@@ -54,6 +58,7 @@ function init(){
     document.querySelector(".main").classList.remove("hidden");
 
     menu_func();
+    home_animation();
     string_func();
 }
 
@@ -84,6 +89,19 @@ function menu_func(){
             }
         }
     }, 300)); // Adjust debounce delay as needed (e.g., 300ms)
+}
+
+// menutext animation
+
+function home_animation(){
+    const myText = new SplitType('#home_text',{types:'words'})
+    
+    gsap.from('.word',{
+        // y: 10,
+        // stagger: 0.2,
+        duration: 1,
+        opacity: 0,
+    })
 }
 
 function string_func(){
@@ -120,4 +138,5 @@ function string_func(){
     });
 
 }
+
 
