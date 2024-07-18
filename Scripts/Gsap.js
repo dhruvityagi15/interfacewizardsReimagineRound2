@@ -54,6 +54,7 @@ function init(){
     document.querySelector(".main").classList.remove("hidden");
 
     menu_func();
+    string_func();
 }
 
 function menu_func(){
@@ -85,17 +86,38 @@ function menu_func(){
     }, 300)); // Adjust debounce delay as needed (e.g., 300ms)
 }
 
-function home(){
-    gsap.to('.main_image', {
-        scrollTrigger: {
-            trigger: '.main_image',
-            scroller:'.home',
-            start: 'center 90%',
-            end: 'center 10%',
-            scrub: 1,
-            markers: true,
-        },
-        opacity: 0,
+function string_func(){
+    var Path = `M 70 100 Q 650 100 1250 100`
+    var finalPath = `M 70 100 Q 650 100 1250 100`
+    
+    var string = document.querySelector(".string")
+    
+    string.addEventListener("mousemove", function(elm) {
+        var rect = elm.target.getBoundingClientRect();
+        var y = elm.clientY ; // Get the y coordinate relative to the element
+        var a = y - 200; // Adjust this value to control the amplitude of the vibration
+        Path = `M 70 100 Q ${elm.x} ${a} 1250 100`;
+        
+        gsap.to('.flicker path', {
+            attr: {
+                d: Path
+            },
+            duration: 0.2,
+            ease: "elastic.out(1,0.2)"
+        });
     });
+    
+    string.addEventListener("mouseleave", function() {
+        Path = finalPath;
+        
+        gsap.to('.flicker path', {
+            attr: {
+                d: Path
+            },
+            duration: 0.5,
+            ease: "bounce.out"
+        });
+    });
+
 }
 

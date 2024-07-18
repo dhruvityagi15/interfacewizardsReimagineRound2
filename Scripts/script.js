@@ -1,6 +1,6 @@
 var main = document.querySelector('.main')
 var cursor = document.querySelector('.cursor');
-var overlay = document.querySelector('.overlay');
+var overlay = document.querySelector(".overlay")
 
 main.addEventListener('mousemove', (e) => {
   cursor.innerHTML = `Littlebox`
@@ -12,4 +12,18 @@ main.addEventListener('mousemove', (e) => {
         background: "#ffffff7c",
     });
 });
+
+overlay.addEventListener('mouseenter', (e) => {
+  cursor.innerHTML = `Shop now`
+  gsap.to(cursor, {
+    scale:2
+  });
+});
+overlay.addEventListener('mouseleave', (e) => {
+  cursor.innerHTML = `LittleBox`
+  gsap.to(cursor, {
+    scale:1
+  });
+});
+
 

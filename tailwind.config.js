@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       fontFamily: {
         mainFont: ["Rammetto One"],
+        page2Font: ["Assistant"]
       },
     },
   },
