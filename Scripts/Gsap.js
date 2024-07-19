@@ -8,8 +8,8 @@ function debounce(func, delay) {
 }
 
 window.addEventListener('load', function() {
-    Loading();
-    // init();
+    // Loading();
+    init();
 });
 gsap.registerPlugin(ScrollTrigger);
 
@@ -169,7 +169,7 @@ function scrollanimation(){
     gsap.registerPlugin(ScrollTrigger);
     
     gsap.to('.Whyus h1', {
-        transform: 'translateX(-150%)',
+        transform: 'translateX(-50%)',
         scrollTrigger: {
             trigger: '.Whyus ',
             scroller: 'body',
@@ -203,7 +203,7 @@ function teamworks() {
     });
   }
 
-  function images_zoomer() {
+function images_zoomer() {
     // Select all images with the class 'images'
     var images = document.querySelectorAll('.images');
 

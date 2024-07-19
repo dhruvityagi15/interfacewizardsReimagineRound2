@@ -4,3 +4,20 @@
     background-position: center;
     background-repeat: no-repeat;
 }
+
+.btn::after{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    left: 0;
+    bottom: -100%;
+    border-radius: 50%;
+}
+.btn:hover::after{
+    bottom: 0;
+    transition: 0.7s;
+    border-radius: 0%;
+
+}
