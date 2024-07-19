@@ -8,8 +8,8 @@ function debounce(func, delay) {
 }
 
 window.addEventListener('load', function() {
-    Loading();
-    // init();
+    // Loading();
+    init();
 });
 gsap.registerPlugin(ScrollTrigger);
 

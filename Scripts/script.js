@@ -93,4 +93,29 @@ document.querySelectorAll('.images').forEach((image) => {
   });
 });
 
+const videoDiv = document.querySelectorAll('.videoDiv ');
+
+videoDiv.forEach((image) => {
+  image.addEventListener('mouseenter', (e) => {
+    document.querySelector('.videoDiv img').classList.add("hidden");
+  });
+
+  image.addEventListener('mouseleave', (e) => {
+    document.querySelector('.videoDiv img').classList.remove("hidden");
+  });
+});
+
+const videoDiv2 = document.querySelectorAll('.videoDiv2 ');
+
+videoDiv2.forEach((image) => {
+  image.addEventListener('mouseenter', (e) => {
+    document.querySelector('.videoDiv2 img').classList.add("hidden");
+  });
+
+  image.addEventListener('mouseleave', (e) => {
+    document.querySelector('.videoDiv2 img').classList.remove("hidden");
+  });
+});
+
+
 
