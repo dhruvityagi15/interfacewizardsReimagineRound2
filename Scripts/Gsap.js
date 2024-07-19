@@ -8,8 +8,8 @@ function debounce(func, delay) {
 }
 
 window.addEventListener('load', function() {
-    // Loading();
-    init();
+    Loading();
+    // init();
 });
 gsap.registerPlugin(ScrollTrigger);
 
@@ -173,7 +173,7 @@ function scrollanimation(){
         scrollTrigger: {
             trigger: '.Whyus ',
             scroller: 'body',
-            markers: true,
+            // markers: true,
             start: 'top 0%',
             end:"top -150%",
             scrub: 2,
@@ -226,4 +226,6 @@ function images_zoomer() {
         });
     });
 }
+
+
 

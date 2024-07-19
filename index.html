@@ -1,182 +1,345 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Little box</title>
-        <link rel="stylesheet" href="output.css">
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
-    </head>
-    <body class="overflow-x-hidden">
-        <!-- loading animation -->
-        <div class="Loading  bg-black w-full h-screen flex justify-center items-center flex-col ">
-            <div class="ball bg-white h-4 w-4 rounded-full"></div>
-            <div class="loading_text w-fit text-[100px] h-0 overflow-hidden p-0 ">
-                <span class=" text-white leading-none font-extrabold inline-block text-[200px] font-mainFont ">LittleBox</span>
-            </div>
-        </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Little box</title>
+    <link rel="stylesheet" href="output.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css"
+    />
+  </head>
+  <body class="overflow-x-hidden">
+    <!-- loading animation -->
+    <div
+      class="Loading bg-black w-full h-screen flex justify-center items-center flex-col"
+    >
+      <div class="ball bg-white h-4 w-4 rounded-full"></div>
+      <div class="loading_text w-fit text-[100px] h-0 overflow-hidden p-0">
+        <span
+          class="text-white leading-none font-extrabold inline-block text-[200px] font-helvatica"
+          >LittleBox</span
+        >
+      </div>
+    </div>
     <div class="main hidden relative">
-        <!-- cursor -->
-        <div class=" cursor h-0 w-0 hidden z-20 p-2 text-lg  text-center items-center bg-white rounded-full fixed"></div>
-        <!-- home -->
-        <div class=" home_parent h-[130vh] w-screen absolute top-0  flex flex-col">
+      <!-- cursor -->
+      <div
+        class="cursor h-0 w-0 hidden font-helvatica z-20 p-2 text-lg text-center items-center bg-white rounded-full fixed"
+      ></div>
+      <!-- home -->
+      <div
+        class="home_parent h-[130vh] w-screen absolute top-0 flex flex-col"
+      ></div>
+      <div
+        class="home w-screen relative h-screen flex justify-center items-center flex-col"
+      >
+        <div
+          id="menu"
+          class="absolute top-0 right-0 z-20 nav h-32 w-40 flex justify-center items-center"
+        >
+          <label class="flex flex-col gap-2 w-8 cursor-pointer">
+            <input class="peer hidden" type="checkbox" />
+            <div
+              class="rounded-2xl h-[3px] w-1/2 bg-white duration-500 peer-checked:rotate-[225deg] origin-right peer-checked:-translate-x-[12px] peer-checked:-translate-y-[1px]"
+            ></div>
+            <div
+              class="rounded-2xl h-[3px] w-full bg-white duration-500 peer-checked:-rotate-45"
+            ></div>
+            <div
+              class="rounded-2xl h-[3px] w-1/2 bg-white duration-500 place-self-end peer-checked:rotate-[225deg] origin-left peer-checked:translate-x-[12px] peer-checked:translate-y-[1px]"
+            ></div>
+          </label>
         </div>
-        <div class="home  w-screen relative h-screen flex justify-center  items-center flex-col">
-            <div id="menu" class="absolute top-0 right-0 z-20 nav h-32 w-40 flex justify-center items-center ">
-                <label  class=" flex flex-col gap-2 w-8 cursor-pointer">
-                    <input class="peer hidden" type="checkbox" />
-                    <div
-                    class="rounded-2xl h-[3px] w-1/2 bg-white duration-500 peer-checked:rotate-[225deg] origin-right peer-checked:-translate-x-[12px] peer-checked:-translate-y-[1px]"
-                    ></div>
-                    <div
-                    class="rounded-2xl h-[3px] w-full bg-white duration-500 peer-checked:-rotate-45"
-                    ></div>
-                    <div
-                    class="rounded-2xl h-[3px] w-1/2 bg-white duration-500 place-self-end peer-checked:rotate-[225deg] origin-left peer-checked:translate-x-[12px] peer-checked:translate-y-[1px]"
-                    ></div>
-                </label>
-                
-            </div>
-            <nav class="full h-full w-[38%] absolute rounded-[15%] z-10 p-10 bg-blue-400 backdrop-blur flex justify-center items-start flex-col text-white top-0 -right-[40%]">
-                <!-- using border add the curve feature
+        <nav
+          class="full h-full w-[38%] absolute rounded-[15%] z-10 p-10 bg-blue-400 backdrop-blur flex justify-center items-start flex-col text-white top-0 -right-[40%]"
+        >
+          <!-- using border add the curve feature
                   -->
-                <h4  class="menu_item inline-block relative overflow-hidden text-7xl p-4 text-white font-mainFont" >Home</h4>
-                <h4  class="menu_item inline-block relative overflow-hidden text-7xl p-4 text-white font-mainFont" >About us</h4>
-                <h4  class="menu_item inline-block relative overflow-hidden text-7xl p-4 text-white font-mainFont" >Contact us</h4>
-                <h4  class="menu_item inline-block relative overflow-hidden text-7xl p-4 text-white font-mainFont" >Our team</h4>
-            </nav>
-            <div class="overlay backdrop-blur-xl p-4 flex flex-col justify-center w-fit items-center">
-                <div class="h-fit w-fit">
-                    <span class=" heading_text text-white leading-none font-extrabold inline-block text-[200px] font-mainFont">LittleBox</span>
-                </div>
-                <div class="h-fit w-1/2 flex text-white justify-center text-center">
-                    <p id="home_text" class=" text-xl overflow-hidden font-semibold">The ultimate fashion destination for trendsetters who want the insta ready, celeb worthy looks & they want them now.With daily drops of fresh styles, fast free delivery & easy peasy returns , your best fit is right here.</p>
-                </div>
-            </div>
+          <h4
+            class="menu_item inline-block relative overflow-hidden text-7xl p-4 text-white font-helvatica"
+          >
+            Home
+          </h4>
+          <h4
+            class="menu_item inline-block relative overflow-hidden text-7xl p-4 text-white font-helvatica"
+          >
+            About us
+          </h4>
+          <h4
+            class="menu_item inline-block relative overflow-hidden text-7xl p-4 text-white font-helvatica"
+          >
+            Contact us
+          </h4>
+          <h4
+            class="menu_item inline-block relative overflow-hidden text-7xl p-4 text-white font-helvatica"
+          >
+            Our team
+          </h4>
+        </nav>
+        <div
+          class="overlay backdrop-blur-xl p-4 flex flex-col justify-center w-fit items-center"
+        >
+          <div class="h-fit w-fit">
+            <span
+              class="heading_text text-white leading-none font-extrabold inline-block text-[200px] font-helvatica"
+              >LittleBox</span
+            >
+          </div>
+          <div class="h-fit w-1/2 flex text-white justify-center text-center">
+            <p id="home_text" class="text-xl font-helvatica overflow-hidden font-semibold">
+              The ultimate fashion destination for trendsetters who want the
+              insta ready, celeb worthy looks & they want them now.With daily
+              drops of fresh styles, fast free delivery & easy peasy returns ,
+              your best fit is right here.
+            </p>
+          </div>
         </div>
-        
-        <div class="page2 h-[250vh] p-10 z-10 bg-orange-100 flex justify-top items-center flex-col">
-            <div class="absolute h-fit p-24 bg-black w-full rounded-[10%]">
-                <h1 class="text-2xl text-yellow-500 hover:underline font-semibold mb-10">What we are ?</h1>
-                <div class="w-8/12">
-                    <p class="page2text text-white text-5xl p-4 overflow-hidden text-center leading-snug font-page2Font">
-                        Little box is building out a digitised supply chain that also gives feedback to factories on which stles are in demand. This way they are able to use data driven buying, merchandising and marketing strategies to create the ultimate flywheel of great selection and great prices.
-                    </p>
-                </div>
+      </div>
 
-                <div class="w-2/12 relative h-16 overflow-hidden flex justify-center m-10 rounded-full items-center  border-2 BODER-BLACK">
-                    <span class="font-bold btn w-full h-full bg-white flex justify-center items-center font-page2Font  hover:text-white text-md">
-                        <a href="#" class="z-10" >Shop Now</a>
-                    </span> 
-                </div>
+      <div
+        class="page2 h-[260vh] p-10 z-10 bg-orange-100 flex justify-top items-center flex-col"
+      >
+        <div id="roundedpage" class="absolute h-fit p-24 bg-black w-full rounded-[10%]">
+          <h1
+            class="text-6xl font-helvatica text-yellow-500 hover:underline font-semibold mb-10"
+          >
+            What we are ?
+          </h1>
+          <div class="w-8/12">
+            <p
+              class="page2text text-white text-5xl p-4 overflow-hidden text-center leading-snug font-helvatica"
+            >
+              Little box is building out a digitised supply chain that also
+              gives feedback to factories on which stles are in demand. This way
+              they are able to use data driven buying, merchandising and
+              marketing strategies to create the ultimate flywheel of great
+              selection and great prices.
+            </p>
+          </div>
 
-                <div class="string  h-64" >
-                    <svg class="flicker" width="1300" stroke-width="3" height="200" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M 70 100 Q 650 100 1250 100" stroke="white" fill="transparent"/>
-                      </svg>                      
-                </div>
+          <div
+            class="w-2/12 relative h-16 overflow-hidden flex justify-center m-10 rounded-full items-center border-2 BODER-BLACK"
+          >
+            <span
+              class="font-bold btn w-full h-full bg-white flex justify-center items-center font-page2Font hover:text-white text-md"
+            >
+              <a href="#" class="z-10">Shop Now</a>
+            </span>
+          </div>
 
-                <div class="w-full h-full flex justify-end items-end flex-col">
-                    <h1 class="text-2xl text-yellow-500 hover:underline font-semibold mb-10">What we are ?</h1>
-                    <div class="w-8/12">
-                        <p class="page2text text-white text-5xl p-4 overflow-hidden text-center  leading-snug font-page2Font">
-                            Little box is building out a digitised supply chain that also gives feedback to factories on which stles are in demand. This way they are able to use data driven buying, merchandising and marketing strategies to create the ultimate flywheel of great selection and great prices.
-                        </p>
-                    </div>
-    
-                    <div class="w-2/12 relative h-16 overflow-hidden flex justify-center m-10 rounded-full items-center  border-2 BODER-BLACK">
-                        <span class="font-bold btn w-full h-full bg-white flex justify-center items-center font-page2Font  hover:text-white text-md">
-                            <a href="#" class="z-10" >Shop Now</a>
-                        </span> 
-                    </div>
-                </div>
+          <div class="string h-64">
+            <svg
+              class="flicker"
+              width="1300"
+              stroke-width="3"
+              height="200"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M 70 100 Q 650 100 1250 100"
+                stroke="white"
+                fill="transparent"
+              />
+            </svg>
+          </div>
 
+          <div class="w-full h-full flex justify-end items-end flex-col">
+            <h1
+              class="text-6xl text-yellow-500 hover:underline font-semibold font-helvatica mb-10"
+            >
+              What we are ?
+            </h1>
+            <div class="w-8/12">
+              <p
+                class="page2text text-white text-5xl p-4 overflow-hidden text-center leading-snug font-helvatica"
+              >
+                Little box is building out a digitised supply chain that also
+                gives feedback to factories on which stles are in demand. This
+                way they are able to use data driven buying, merchandising and
+                marketing strategies to create the ultimate flywheel of great
+                selection and great prices.
+              </p>
             </div>
-            <!-- <img class=" main_image absolute top-0 right-0 h-full z-0 " src="" alt=""> -->
+
+            <div
+              class="w-2/12 relative h-16 overflow-hidden flex justify-center m-10 rounded-full items-center border-2 BODER-BLACK"
+            >
+              <span
+                class="font-bold btn w-full h-full bg-white flex justify-center items-center font-page2Font hover:text-white text-md"
+              >
+                <a href="#" class="z-10">Shop Now</a>
+              </span>
+            </div>
+          </div>
         </div>
+        <!-- <img class=" main_image absolute top-0 right-0 h-full z-0 " src="" alt=""> -->
+      </div>
+
+      <div
+        class="page3 h-[100vh] bg-orange-100 w-screen flex flex-col items-center justify-center"
+      >
+        <h1 class="text-7xl font-helvatica">#GoBeYou</h1>
+        <div class="gobeyou_reason flex flex-col justify-start w-[70%]">
+          <div class="list w-full mt-20">
+            <div
+                id="our_collection"
+              class="listlem  text-5xl border-4 p-5 border-stone-950 m-2 rounded-xl relative"
+            >
+              <div class="relative z-[3] flex justify-between">
+                <div class="left flex text-center gap-10">
+                  <h3 class="text-2xl font-helvatica md:text-5xl">Our Collection</h3>
+                </div>
+              </div>
+              <div
+                class="picture opacity-0 w-[15rem] h-[15rem] overflow-hidden rounded-3xl absolute z-[4] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+              >
+                <img
+                  src="https://littleboxindia.com/cdn/shop/files/set_of_two_corset_style.jpg?v=1719477299"
+                  class="w-full h-full"
+                  alt=""
+                />
+              </div>
+              <div
+                class="bluelayer bottom-0 left-0 z-[2] absolute w-full h-full"
+              ></div>
+            </div>
+            <div
+            id="Pick_a_Mood"
+              class="listlem text-5xl border-4 p-5 border-stone-950 m-2 rounded-xl relative"
+            >
+              <div class="relative z-[3] flex justify-between">
+                <div class="left flex text-center gap-10">
+                  <h3 class="text-2xl font-helvatica md:text-5xl">Pick a Mood</h3>
+                </div>
+              </div>
+              <div
+                class="picture opacity-0 w-[15rem] h-[15rem] overflow-hidden rounded-3xl absolute z-[4] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+              >
+                <img
+                  src="https://littleboxindia.com/cdn/shop/files/SAVE_20240518_204724_300x.jpg?v=1716045564"
+                  class="w-full h-full"
+                  alt=""
+                />
+              </div>
+              <div
+                class="bluelayer bottom-0 left-0 z-[2] absolute w-full h-full"
+              ></div>
+            </div>
+            <div id="Shop_The_Look"
+              class="listlem text-5xl border-4 p-5 border-stone-950 m-2 rounded-xl relative"
+            >
+              <div class="relative z-[3] flex justify-between">
+                <div class="left flex text-center gap-10">
+                  <h3 class="text-2xl font-helvatica md:text-5xl">Shop The Look</h3>
+                </div>
+              </div>
+              <div
+                class="picture opacity-0 w-[15rem] h-[15rem] overflow-hidden rounded-3xl absolute z-[4] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+              >
+                <img
+                  src="https://littleboxindia.com/cdn/shop/files/SAVE_20240518_204719_300x.jpg?v=1716045564"
+                  class="w-full h-full"
+                  alt=""
+                />
+              </div>
+              <div
+                class="bluelayer bottom-0 left-0 z-[2] absolute w-full h-full"
+              ></div>
+            </div>
+            <div id="New_For_You"
+              class="listlem text-5xl border-4 p-5 border-stone-950 m-2 rounded-xl relative"
+            >
+              <div class="relative z-[3] flex justify-between">
+                <div class="left flex text-center gap-10">
+                  <h3 class="text-2xl font-helvatica md:text-5xl">New For You</h3>
+                </div>
+              </div>
+              <div
+                class="picture opacity-0 w-[15rem] h-[15rem] overflow-hidden rounded-3xl absolute z-[4] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+              >
+                <img
+                  src="https://littleboxindia.com/cdn/shop/files/SAVE_20240518_204714_300x.jpg?v=1716045563"
+                  class="w-full h-full"
+                  alt=""
+                />
+              </div>
+              <div
+                class="bluelayer bottom-0 left-0 z-[2] absolute w-full h-full"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="page4 h-screen p-10">
+        <span class="text-5xl m-10 font-helvatica font-semibold">#LitClub</span>
+        <div class="flex justify-between m-10 gap-10">
+          <div class="w-[500px] overflow-hidden">
             
-        <div class="page3 h-[100vh] bg-orange-100 w-screen flex flex-col items-center justify-center ">
-            <h1 class="text-7xl font-mainFont" >#GoBeYou</h1>
-            <div class=" gobeyou_reason flex flex-col justify-start w-[70%]">
-                <div class="list  w-full mt-20 ">
-                    <div class="listlem text-5xl border-4 p-5 border-stone-950 m-2 rounded-xl relative ">
-                        <div class="relative z-[3] flex justify-between">
-                            <div class="left flex text-center gap-10">
-                                <h3 class="text-2xl md:text-5xl">Our Collection</h3>
-                            </div>
-                        </div>
-                        <div
-                            class="picture opacity-0 w-[15rem] h-[15rem] overflow-hidden rounded-3xl absolute z-[4] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                            <img src="https://littleboxindia.com/cdn/shop/files/set_of_two_corset_style.jpg?v=1719477299" class="w-full h-full" alt="">
-                        </div>
-                        <div class="bluelayer bottom-0 left-0 z-[2] absolute w-full h-full ">
-                        </div>
-                    </div>
-                    <div class="listlem text-5xl border-4 p-5 border-stone-950 m-2 rounded-xl relative ">
-                        <div class="relative z-[3] flex justify-between">
-                            <div class="left flex text-center gap-10">
-                                <h3 class="text-2xl md:text-5xl">Pick a Mood</h3>
-                            </div>
-                        </div>
-                        <div
-                            class="picture opacity-0 w-[15rem] h-[15rem] overflow-hidden rounded-3xl absolute z-[4] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                            <img src="https://littleboxindia.com/cdn/shop/files/SAVE_20240518_204724_300x.jpg?v=1716045564" class="w-full h-full" alt="">
-                        </div>
-                        <div class="bluelayer bottom-0 left-0 z-[2] absolute w-full h-full ">
-                        </div>
-                    </div>
-                    <div class="listlem text-5xl border-4 p-5 border-stone-950 m-2 rounded-xl relative ">
-                        <div class="relative z-[3] flex justify-between">
-                            <div class="left flex text-center gap-10">
-                                <h3 class="text-2xl md:text-5xl">Shop The Look</h3>
-                            </div>
-                        </div>
-                        <div
-                            class="picture opacity-0 w-[15rem] h-[15rem] overflow-hidden rounded-3xl absolute z-[4] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                            <img src="https://littleboxindia.com/cdn/shop/files/SAVE_20240518_204719_300x.jpg?v=1716045564" class="w-full h-full" alt="">
-                        </div>
-                        <div class="bluelayer bottom-0 left-0 z-[2] absolute w-full h-full ">
-                        </div>
-                    </div>
-                    <div class="listlem text-5xl border-4 p-5 border-stone-950 m-2 rounded-xl relative ">
-                        <div class="relative z-[3] flex justify-between">
-                            <div class="left flex text-center gap-10">
-                                <h3 class="text-2xl md:text-5xl">New For You</h3>
-                            </div>
-                        </div>
-                        <div
-                            class="picture opacity-0 w-[15rem] h-[15rem] overflow-hidden rounded-3xl absolute z-[4] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                            <img src="https://littleboxindia.com/cdn/shop/files/SAVE_20240518_204714_300x.jpg?v=1716045563" class="w-full h-full" alt="">
-                        </div>
-                        <div class="bluelayer bottom-0 left-0 z-[2] absolute w-full h-full ">
-                        </div>
-                    </div>
+            <img
+              class="images"
+              src="https://littleboxindia.com/cdn/shop/files/When_your_outfit_feels_just_right__confidence_shines_effortlessly____littlebox.india__littlebox_wit__littlebox_trends_____ComfortableFashion__OwnYourStyle__JPG_5eccc1e3-54c6-4d5c-9e10-d0a2ac430ada.jpg?v=1719479634"
+              alt=""
+            />
+          </div>
+          <div class="w-[500px] overflow-hidden">
+            <img
+              class="images"
+              src="https://littleboxindia.com/cdn/shop/files/tanya_bedi_97f1925b-5017-48c8-bb9c-c9b076fd59ec.jpg?v=1709553111"
+              alt=""
+            />
+          </div>
+          <div class="w-[500px] overflow-hidden">
+            <img
+              class="images"
+              src="https://littleboxindia.com/cdn/shop/files/vivacious_10ee9196-bffa-47dd-a64d-1523d3b64421.jpg?v=1709552666"
+              alt=""
+            />
+          </div>
+        </div>
+
+        <div
+          class="w-4/12 relative h-16 overflow-hidden flex justify-center m-10 rounded-full items-center border-2 BODER-BLACK"
+        >
+          <span
+            class="font-bold btn w-full h-full flex justify-center items-center font-page2Font hover:text-white text-md"
+          >
+            <a href="#" class="z-10">JOIN OUR #LitClub</a>
+          </span>
+        </div>
+      </div>
+
+      <div class="Whyus w-fit h-full px-10 relative bg-yellow-200">
+        <h1 class="text-[40vw] text-black">COUTURE</h1>
+      </div>
+      <div class="h-[240vh] p-10 flex relative justify-center">
+        <h1 class="text-8xl font-helvatica">The Carousel</h1>
+        <div class="pin_container ">
+           <div class="card overflow-hidden card_small"> <img src="https://i.pinimg.com/236x/78/a5/ed/78a5ed8713dcfebc630d43e47f9df453.jpg" class=" w-full  images" alt=""></div>
+           <div class="card overflow-hidden card_small"> <img src="https://i.pinimg.com/236x/8b/f5/63/8bf563c25abadf3f7b223b14a3f0fbcc.jpg" class=" w-full h-full images" alt=""></div>
+           <div class="card overflow-hidden card_medium"> <img src="https://i.pinimg.com/236x/a4/3d/8c/a43d8cd1eaaba72fdecf088518791990.jpg" class=" w-full h-full images" alt=""></div>
+           <div class="card overflow-hidden card_large"> <img src="https://i.pinimg.com/236x/88/74/46/8874464a65da80bec6c9a16c9df178e2.jpg" class=" w-full h-full images" alt=""></div>  
+           <div class="card overflow-hidden card_medium"> <img src="https://i.pinimg.com/474x/f5/f9/18/f5f918b313cf40496b9db6200a914fca.jpg" class=" w-full  images" alt=""></div>
+           <div class="card overflow-hidden card_small"> <img src="https://i.pinimg.com/474x/cd/78/35/cd78356ae220cdbc1198e03b303ef071.jpg" class=" w-full  images" alt=""></div>
+           <div class="card overflow-hidden card_medium"> <img src="https://i.pinimg.com/236x/7f/c8/64/7fc86467c7fcb5ccee70cea0b65a31ac.jpg" class=" w-full h-full images" alt=""></div>
+           <div class="card overflow-hidden card_large"> <img src="https://i.pinimg.com/236x/bf/8f/68/bf8f6818c72bd24ce7b6b61721a4bcf2.jpg" class=" w-full h-full images" alt=""></div>  
+           <div class="card overflow-hidden card_large"> <img src="https://i.pinimg.com/474x/ea/8f/0a/ea8f0ac809e3cccc8592395bdd85fef5.jpg" class=" w-full h-full images" alt=""></div>  
+           <div class="card overflow-hidden card_small"> <img src="https://i.pinimg.com/236x/a9/98/1a/a9981aab956446421677d0f533ae0abe.jpg" class=" w-full h-full images" alt=""></div>
+           <div class="card overflow-hidden card_small"> <img src="https://i.pinimg.com/236x/74/0b/16/740b16715ca5ba7f7ea6e753ace5ac50.jpg" class=" w-full h-full images" alt=""></div>
+           <div class="card overflow-hidden card_medium"> <img src="https://i.pinimg.com/236x/b1/21/1b/b1211bf5fecbd385779cbf0b7c4854a8.jpg" class="  h-full images" alt=""></div>
+           <div class="card overflow-hidden card_large"> <img src="https://i.pinimg.com/236x/44/9f/d4/449fd441da6eecbecb8dd7f0a620010c.jpg" class=" w-full h-full images" alt=""></div>  
+           <div class="card overflow-hidden card_medium"> <img src="https://i.pinimg.com/236x/23/88/18/238818d796926b2f27985312833786f9.jpg" class=" w-full h-full images" alt=""></div>
+           <div class="card overflow-hidden card_small"> <img src="https://i.pinimg.com/474x/19/0e/fc/190efc44eb553e3e7a4bb84d03600863.jpg" class=" w-full h-full images" alt=""></div>
+        </div>
+      </div>
     
-                </div>
-            </div>
-        </div>
-
-        <div class="page4 h-screen  p-10">
-            <span class="text-5xl m-10 font-page2Font font-semibold" >#LitClub</span>
-            <div class="flex justify-between m-10 gap-10">
-                <div class="w-[500px] overflow-hidden"><img class="images" src="https://littleboxindia.com/cdn/shop/files/When_your_outfit_feels_just_right__confidence_shines_effortlessly____littlebox.india__littlebox_wit__littlebox_trends_____ComfortableFashion__OwnYourStyle__JPG_5eccc1e3-54c6-4d5c-9e10-d0a2ac430ada.jpg?v=1719479634" alt=""></div>
-                <div class="w-[500px] overflow-hidden"><img class="images" src="https://littleboxindia.com/cdn/shop/files/tanya_bedi_97f1925b-5017-48c8-bb9c-c9b076fd59ec.jpg?v=1709553111" alt=""></div>
-                <div class="w-[500px] overflow-hidden"><img class="images" src="https://littleboxindia.com/cdn/shop/files/vivacious_10ee9196-bffa-47dd-a64d-1523d3b64421.jpg?v=1709552666" alt=""></div>
-            </div>
-
-            <div class="w-4/12 relative h-16 overflow-hidden flex justify-center m-10 rounded-full items-center  border-2 BODER-BLACK">
-                <span class="font-bold btn w-full h-full flex justify-center items-center font-page2Font  hover:text-white text-md">
-                    <a href="#" class="z-10" >JOIN OUR #LitClub</a>
-                </span> 
-            </div>
-        </div>
-
-        <div class="Whyus w-fit h-full px-10 relative bg-yellow-200">
-                <h1 class=" text-[40vw] text-black">COUTURE</h1>
-        </div>
-        <div class=" h-screen"><h1>The Carosoul</h1></div>
-        <div class="footer h-screen"></div>
+      <div class="page7 h-screen bg-zinc-700 relative flex flex-col justify-center items-start p-10 gap-5">
+        
+       </div>
+    
     </div>
 
     <script src="https://unpkg.com/split-type"></script>
@@ -185,5 +348,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="./Scripts/Gsap.js"></script>
     <script src="./Scripts/script.js"></script>
-</body>
+  </body>
 </html>

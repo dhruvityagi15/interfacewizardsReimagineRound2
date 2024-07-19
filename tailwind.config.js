@@ -5,7 +5,8 @@ module.exports = {
     extend: {
       fontFamily: {
         mainFont: ["Rammetto One"],
-        page2Font: ["Assistant"]
+        page2Font: ["Assistant"],
+        helvatica:["helvetica",'sans-serif']
       },
     },
   },

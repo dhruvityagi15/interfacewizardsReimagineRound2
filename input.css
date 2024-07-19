@@ -3,3 +3,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: 'helvetica';
+    src: url('./fonts/helvetica-rounded-bold-5871d05ead8de.otf');
+}

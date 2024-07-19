@@ -34,7 +34,6 @@ main.addEventListener('mouseenter', (e) => {
 })
 
 overlay.addEventListener('mouseenter', (e) => {
-  cursor.innerHTML = `Shop now`
   gsap.to(cursor, {
     scale:2
   });
@@ -43,6 +42,54 @@ overlay.addEventListener('mouseleave', (e) => {
   cursor.innerHTML = `LittleBox`
   gsap.to(cursor, {
     scale:1
+  });
+});
+
+document.querySelector('#roundedpage').addEventListener('mousemove', (e) => {
+  cursor.innerHTML = `What are we`
+})
+document.querySelector('#roundedpage').addEventListener('mouseleave', (e) => {
+  cursor.innerHTML = `LittleBox`
+})
+
+
+document.querySelector('#our_collection').addEventListener('mousemove', (e) => {
+  cursor.innerHTML = `Our Collection`
+})
+document.querySelector('#our_collection').addEventListener('mouseleave', (e) => {
+  cursor.innerHTML = `LittleBox`
+})
+
+
+document.querySelector('#Pick_a_Mood').addEventListener('mousemove', (e) => {
+  cursor.innerHTML = `Pick a Mood`
+})
+document.querySelector('#Pick_a_Mood').addEventListener('mouseleave', (e) => {
+  cursor.innerHTML = `LittleBox`
+})
+
+document.querySelector('#Shop_The_Look').addEventListener('mousemove', (e) => {
+  cursor.innerHTML = `Shop The Look`
+})
+document.querySelector('#Shop_The_Look').addEventListener('mouseleave', (e) => {
+  cursor.innerHTML = `LittleBox`
+})
+
+document.querySelector('#New_For_You').addEventListener('mousemove', (e) => {
+  cursor.innerHTML = `New For You`
+})
+document.querySelector('#New_For_You').addEventListener('mouseleave', (e) => {
+  cursor.innerHTML = `LittleBox`
+})
+
+
+document.querySelectorAll('.images').forEach((image) => {
+  image.addEventListener('mousemove', (e) => {
+    cursor.innerHTML = `Shop Now`;
+  });
+  
+  image.addEventListener('mouseleave', (e) => {
+    cursor.innerHTML = `LittleBox`;
   });
 });
 

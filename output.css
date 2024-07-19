@@ -658,10 +658,6 @@ video {
   height: 4rem;
 }
 
-.h-20{
-  height: 5rem;
-}
-
 .h-32{
   height: 8rem;
 }
@@ -686,8 +682,12 @@ video {
   height: 15rem;
 }
 
-.h-\[250vh\]{
-  height: 250vh;
+.h-\[240vh\]{
+  height: 240vh;
+}
+
+.h-\[260vh\]{
+  height: 260vh;
 }
 
 .h-\[3px\]{
@@ -707,16 +707,16 @@ video {
   height: 100vh;
 }
 
+.w-0{
+  width: 0px;
+}
+
 .w-1\/2{
   width: 50%;
 }
 
 .w-2\/12{
   width: 16.666667%;
-}
-
-.w-20{
-  width: 5rem;
 }
 
 .w-4{
@@ -766,14 +766,6 @@ video {
 
 .w-screen{
   width: 100vw;
-}
-
-.w-2{
-  width: 0.5rem;
-}
-
-.w-0{
-  width: 0px;
 }
 
 .origin-left{
@@ -836,6 +828,10 @@ video {
 
 .gap-2{
   gap: 0.5rem;
+}
+
+.gap-5{
+  gap: 1.25rem;
 }
 
 .place-self-end{
@@ -916,9 +912,9 @@ video {
   background-color: rgb(254 240 138 / var(--tw-bg-opacity));
 }
 
-.bg-zinc-400{
+.bg-zinc-700{
   --tw-bg-opacity: 1;
-  background-color: rgb(161 161 170 / var(--tw-bg-opacity));
+  background-color: rgb(63 63 70 / var(--tw-bg-opacity));
 }
 
 .p-0{
@@ -954,6 +950,10 @@ video {
   text-align: center;
 }
 
+.font-helvatica{
+  font-family: helvetica, sans-serif;
+}
+
 .font-mainFont{
   font-family: Rammetto One;
 }
@@ -972,8 +972,18 @@ video {
   line-height: 1;
 }
 
+.text-6xl{
+  font-size: 3.75rem;
+  line-height: 1;
+}
+
 .text-7xl{
   font-size: 4.5rem;
+  line-height: 1;
+}
+
+.text-8xl{
+  font-size: 6rem;
   line-height: 1;
 }
 
@@ -985,8 +995,8 @@ video {
   font-size: 200px;
 }
 
-.text-\[35vw\]{
-  font-size: 35vw;
+.text-\[40vw\]{
+  font-size: 40vw;
 }
 
 .text-lg{
@@ -997,10 +1007,6 @@ video {
 .text-xl{
   font-size: 1.25rem;
   line-height: 1.75rem;
-}
-
-.text-\[40vw\]{
-  font-size: 40vw;
 }
 
 .font-bold{
@@ -1038,14 +1044,6 @@ video {
   color: rgb(234 179 8 / var(--tw-text-opacity));
 }
 
-.text-\[vw\]{
-  color: vw;
-}
-
-.text-\[uvw\]{
-  color: uvw;
-}
-
 .opacity-0{
   opacity: 0;
 }
@@ -1066,9 +1064,10 @@ video {
   transition-duration: 500ms;
 }
 
-.hover\:bg-slate-200:hover{
-  --tw-bg-opacity: 1;
-  background-color: rgb(226 232 240 / var(--tw-bg-opacity));
+@font-face {
+  font-family: 'helvetica';
+
+  src: url('./fonts/helvetica-rounded-bold-5871d05ead8de.otf');
 }
 
 .hover\:text-white:hover{
