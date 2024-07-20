@@ -694,10 +694,6 @@ video {
   height: 15rem;
 }
 
-.h-\[240vh\]{
-  height: 240vh;
-}
-
 .h-\[260vh\]{
   height: 260vh;
 }
@@ -944,16 +940,6 @@ video {
 .bg-yellow-200{
   --tw-bg-opacity: 1;
   background-color: rgb(254 240 138 / var(--tw-bg-opacity));
-}
-
-.bg-orange-900{
-  --tw-bg-opacity: 1;
-  background-color: rgb(124 45 18 / var(--tw-bg-opacity));
-}
-
-.bg-cyan-400{
-  --tw-bg-opacity: 1;
-  background-color: rgb(34 211 238 / var(--tw-bg-opacity));
 }
 
 .object-cover{

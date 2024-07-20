@@ -169,7 +169,7 @@ function scrollanimation(){
     gsap.registerPlugin(ScrollTrigger);
     
     gsap.to('.Whyus h1', {
-        transform: 'translateX(-50%)',
+        transform: 'translateX(-60%)',
         scrollTrigger: {
             trigger: '.Whyus ',
             scroller: 'body',
