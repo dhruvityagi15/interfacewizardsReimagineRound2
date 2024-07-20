@@ -227,5 +227,8 @@ function images_zoomer() {
     });
 }
 
+function page2text_animation(){
+    
+}
 
 
