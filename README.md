@@ -1,6 +1,6 @@
 ﻿# Littlebox
 Developer: Anubhav Dubey
-Designer: Dhruvi Tyagi
-          Alka Singh
+Designer: Alka Singh
           Piyush Jaiswal
           Avanish Shukla
+          Dhruvi Tyagi
